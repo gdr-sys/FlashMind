@@ -51,7 +51,7 @@ export const translations = {
     
     // Study
     startStudy: 'Start Study',
-    tapToFlip: 'Tap to flip',
+    tapToFlip: 'Tap or press ↑ to flip',
     forgot: "Didn't know",
     hard: 'So-so',
     knew: 'Knew it!',
@@ -170,7 +170,7 @@ export const translations = {
     manageCards: 'Gestisci Carte',
     noCards: 'Nessuna carta in questo mazzo.',
     startStudy: 'Inizia Studio',
-    tapToFlip: 'Tocca per girare',
+    tapToFlip: 'Tocca o premi ↑ per girare',
     forgot: 'Non sapevo',
     hard: 'Così così',
     knew: 'Sapevo!',

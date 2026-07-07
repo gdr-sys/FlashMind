@@ -1,0 +1,251 @@
+{
+  "version": "1.0.0",
+  "exportedAt": 1700000000000,
+  "decks": [
+    {
+      "id": "demo-deck-1",
+      "name": "Italiano — Parole Quotidiane",
+      "description": "Le 20 parole italiane più usate nel quotidiano",
+      "color": "#6366f1",
+      "createdAt": 1700000000000,
+      "updatedAt": 1700000000000,
+      "cards": [
+        {
+          "id": "card-01",
+          "front": "**Buongiorno**",
+          "back": "**Good morning** — used as a greeting until ~4pm",
+          "tags": ["greetings", "basics"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-02",
+          "front": "**Grazie**",
+          "back": "**Thank you** — the most important word in any language!",
+          "tags": ["greetings", "basics"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-03",
+          "front": "**Per favore**",
+          "back": "**Please** — literally \"for favor\"",
+          "tags": ["greetings", "basics"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-04",
+          "front": "**Scusa / Mi scusi**",
+          "back": "**Sorry / Excuse me** — *scusa* (informal), *mi scusi* (formal)",
+          "tags": ["greetings", "basics"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-05",
+          "front": "**Sì / No**",
+          "back": "**Yes / No**",
+          "tags": ["basics"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-06",
+          "front": "**Come ti chiami?**",
+          "back": "**What's your name?** — informal. Use *Come si chiama?* for formal.",
+          "tags": ["questions", "conversations"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-07",
+          "front": "**Mi chiamo...**",
+          "back": "**My name is...** — literally \"I call myself...\"",
+          "tags": ["conversations"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-08",
+          "front": "**Quanto costa?**",
+          "back": "**How much does it cost?**",
+          "tags": ["shopping", "questions"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-09",
+          "front": "**Il conto, per favore**",
+          "back": "**The bill, please** — essential phrase in restaurants!",
+          "tags": ["food", "restaurants"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-10",
+          "front": "**Vorrei un caffè**",
+          "back": "**I would like a coffee** — *un caffè* = an espresso in Italy!",
+          "tags": ["food", "restaurants"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-11",
+          "front": "**Acqua**",
+          "back": "**Water** — *acqua naturale* = still water, *acqua frizzante* = sparkling water",
+          "tags": ["food", "basics"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-12",
+          "front": "**Dov'è il bagno?**",
+          "back": "**Where is the bathroom?** — probably the most useful sentence!",
+          "tags": ["questions", "travel"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-13",
+          "front": "**Quanto tempo ci vuole?**",
+          "back": "**How much time does it take?** — useful for travel and appointments",
+          "tags": ["questions", "travel"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-14",
+          "front": "**Ho bisogno di aiuto**",
+          "back": "**I need help** — important phrase to know!",
+          "tags": ["emergency", "basics"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-15",
+          "front": "**Non parlo italiano**",
+          "back": "**I don't speak Italian** — ironic but useful!",
+          "tags": ["conversations"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-16",
+          "front": "**Parla inglese?**",
+          "back": "**Do you speak English?** — most people say *sì*!",
+          "tags": ["conversations"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-17",
+          "front": "**Molto bello!**",
+          "back": "**Very beautiful!** — use it to compliment anything",
+          "tags": ["expressions"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-18",
+          "front": "**Buona giornata!**",
+          "back": "**Have a good day!** — polite way to say goodbye during daytime",
+          "tags": ["greetings", "farewell"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-19",
+          "front": "**A presto!**",
+          "back": "**See you soon!** — casual and friendly farewell",
+          "tags": ["farewell"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-20",
+          "front": "**Ti voglio bene ❤️**",
+          "back": "**I love you / I care about you** — used for family and close friends. Different from *ti amo* (romantic love).",
+          "tags": ["expressions", "emotions"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        }
+      ]
+    },
+    {
+      "id": "demo-deck-2",
+      "name": "Spaced Repetition — Come Funziona",
+      "description": "Impara come usare FlashMind al meglio",
+      "color": "#8b5cf6",
+      "createdAt": 1700000000000,
+      "updatedAt": 1700000000000,
+      "cards": [
+        {
+          "id": "card-sr-01",
+          "front": "## Cosa succede quando premi ❌ \"Non sapevo\"?",
+          "back": "La carta viene **ripresentata a breve** (dopo 1 minuto) nella stessa sessione. Il tuo progresso si azzera per quella carta.",
+          "tags": ["tutorial"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-sr-02",
+          "front": "## Cosa succede quando premi ✅ \"Sapevo\"?",
+          "back": "L'intervallo cresce **esponenzialmente**:\n- 1° volta → 1 giorno\n- 2° volta → ~2.5 giorni\n- 3° volta → ~6 giorni\n- E così via...",
+          "tags": ["tutorial"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-sr-03",
+          "front": "## Le 4 fasi di una carta:\n\n🔘 → 🟡 → 🔵 → 🟢",
+          "back": "1. **🔘 Nuova** — Mai studiata\n2. **🟡 In apprendimento** — Intervallo < 1 giorno\n3. **🔵 Ripasso** — Intervallo 1-21 giorni\n4. **🟢 Padronanza** — Intervallo > 21 giorni",
+          "tags": ["tutorial"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-sr-04",
+          "front": "## Accorgimenti per studiare meglio:\n\n1. **Sii onesto** con te stesso\n2. Studia **ogni giorno**\n3. Le sessioni **brevi ma regolari** battono lunghe sessioni sporadiche",
+          "back": "La ripetizione a spazi funziona meglio quando:\n- Non rinunci a una sessione\n- Stai attento a non barare (sii rigoroso)\n- Fai pause tra le sessioni",
+          "tags": ["tutorial", "tips"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        },
+        {
+          "id": "card-sr-05",
+          "front": "## Scorciatoie da tastiera durante lo studio:\n\n`Space` = Girare la carta\n`1` = Non sapevo\n`2` = Così così\n`3` = Sapevo",
+          "back": "Usa la tastiera per studiare più velocemente! Puoi anche **swipe** con il dito:\n- 👉 Swipe destra = Sapevo\n- 👈 Swipe sinistra = Non sapevo",
+          "tags": ["tutorial", "tips"],
+          "sr": { "stage": 0, "ease": 2.5, "interval": 0, "streak": 0, "nextReview": 0, "totalReviews": 0, "totalCorrect": 0 },
+          "createdAt": 1700000000000,
+          "updatedAt": 1700000000000
+        }
+      ]
+    }
+  ]
+}

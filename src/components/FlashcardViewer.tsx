@@ -150,18 +150,29 @@ export default function FlashcardViewer() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (sessionDone) return;
       switch (e.key) {
+        // Flip card
         case ' ':
         case 'Enter':
+        case 'ArrowUp':
           e.preventDefault();
           if (!isFlipped) flipCard();
           break;
+        // Didn't know (forgot)
         case '1':
+        case 'ArrowLeft':
+          e.preventDefault();
           if (isFlipped) answerCard('forgot');
           break;
+        // So-so (hard)
         case '2':
+        case 'ArrowDown':
+          e.preventDefault();
           if (isFlipped) answerCard('hard');
           break;
+        // Knew it
         case '3':
+        case 'ArrowRight':
+          e.preventDefault();
           if (isFlipped) answerCard('knew');
           break;
       }

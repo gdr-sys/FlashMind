@@ -83,103 +83,103 @@ export default function FlashcardViewer() {
     startTimeRef.current = Date.now();
   };
 
+  // Refs for latest values (so event listeners always have current data)
+  const isFlippedRef = useRef(isFlipped);
+  isFlippedRef.current = isFlipped;
+  const sessionDoneRef = useRef(sessionDone);
+  sessionDoneRef.current = sessionDone;
+  const isAnimatingRef = useRef(isAnimating);
+  isAnimatingRef.current = isAnimating;
+
   // Flip card
   const flipCard = useCallback(() => {
-    if (!isAnimating) {
+    if (!isAnimatingRef.current) {
       setIsFlipped((prev) => !prev);
     }
-  }, [isAnimating]);
+  }, []);
 
-  // Answer card
-  const answerCard = useCallback(
-    (quality: AnswerQuality) => {
-      if (!currentCard || !deck || isAnimating) return;
+  // Answer card (stable reference via refs)
+  const answerCardRef = useRef<((quality: AnswerQuality) => void) | null>(null);
+  
+  answerCardRef.current = (quality: AnswerQuality) => {
+    const card = currentCard;
+    const d = deck;
+    if (!card || !d || isAnimatingRef.current) return;
 
-      setIsAnimating(true);
+    setIsAnimating(true);
 
-      // Update spaced repetition
-      const newSR = updateSR(currentCard.sr, quality);
-      updateCardSR(deck.id, currentCard.id, newSR);
+    const newSR = updateSR(card.sr, quality);
+    updateCardSR(d.id, card.id, newSR);
 
-      // Update session result
-      const newResult: SessionResult = {
-        cardsStudied: resultRef.current.cardsStudied + 1,
-        correct: resultRef.current.correct + (quality === 'knew' ? 1 : 0),
-        hard: resultRef.current.hard + (quality === 'hard' ? 1 : 0),
-        forgot: resultRef.current.forgot + (quality === 'forgot' ? 1 : 0),
-      };
-      setResult(newResult);
-      resultRef.current = newResult;
+    const newResult: SessionResult = {
+      cardsStudied: resultRef.current.cardsStudied + 1,
+      correct: resultRef.current.correct + (quality === 'knew' ? 1 : 0),
+      hard: resultRef.current.hard + (quality === 'hard' ? 1 : 0),
+      forgot: resultRef.current.forgot + (quality === 'forgot' ? 1 : 0),
+    };
+    setResult(newResult);
+    resultRef.current = newResult;
 
-      // If forgot, re-add card to end of queue
-      let queueLength = studyQueue.length;
-      if (quality === 'forgot') {
-        setStudyQueue((prev) => [...prev, { ...currentCard, sr: newSR }]);
-        queueLength += 1;
+    let queueLength = studyQueue.length;
+    if (quality === 'forgot') {
+      setStudyQueue((prev) => [...prev, { ...card, sr: newSR }]);
+      queueLength += 1;
+    }
+
+    const nextIdx = currentIndex + 1;
+    setTimeout(() => {
+      if (nextIdx >= queueLength) {
+        setSessionDone(true);
+        addSession({
+          deckId: d.id,
+          startedAt: startTimeRef.current,
+          endedAt: Date.now(),
+          cardsStudied: newResult.cardsStudied,
+          correct: newResult.correct,
+          hard: newResult.hard,
+          forgot: newResult.forgot,
+        });
+      } else {
+        setCurrentIndex(nextIdx);
+        setIsFlipped(false);
       }
+      setIsAnimating(false);
+      setSwipeOffset(0);
+    }, 300);
+  };
 
-      // Animate out and move to next
-      const nextIdx = currentIndex + 1;
-      setTimeout(() => {
-        if (nextIdx >= queueLength) {
-          // Session complete
-          setSessionDone(true);
-          addSession({
-            deckId: deck.id,
-            startedAt: startTimeRef.current,
-            endedAt: Date.now(),
-            cardsStudied: newResult.cardsStudied,
-            correct: newResult.correct,
-            hard: newResult.hard,
-            forgot: newResult.forgot,
-          });
-        } else {
-          setCurrentIndex(nextIdx);
-          setIsFlipped(false);
-        }
-        setIsAnimating(false);
-        setSwipeOffset(0);
-      }, 300);
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [currentCard?.id, deck?.id, currentIndex, studyQueue.length, isAnimating, updateCardSR, addSession]
-  );
+  // Stable wrapper for answerCard
+  const answerCard = useCallback((quality: AnswerQuality) => {
+    answerCardRef.current?.(quality);
+  }, []);
 
-  // Keyboard shortcuts
+  // Keyboard shortcuts (stable listener, uses refs)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (sessionDone) return;
+      if (sessionDoneRef.current) return;
       switch (e.key) {
-        // Flip card
         case ' ':
         case 'Enter':
-        case 'ArrowUp':
           e.preventDefault();
-          if (!isFlipped) flipCard();
+          if (!isFlippedRef.current) flipCard();
           break;
-        // Didn't know (forgot)
         case '1':
         case 'ArrowLeft':
-          e.preventDefault();
-          if (isFlipped) answerCard('forgot');
+          if (isFlippedRef.current) answerCardRef.current?.('forgot');
           break;
-        // So-so (hard)
         case '2':
         case 'ArrowDown':
-          e.preventDefault();
-          if (isFlipped) answerCard('hard');
+          if (isFlippedRef.current) answerCardRef.current?.('hard');
           break;
-        // Knew it
         case '3':
         case 'ArrowRight':
-          e.preventDefault();
-          if (isFlipped) answerCard('knew');
+          if (isFlippedRef.current) answerCardRef.current?.('knew');
           break;
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isFlipped, sessionDone, flipCard, answerCard]);
+  }, [flipCard]);
 
   // Touch handlers for swipe
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -202,9 +202,9 @@ export default function FlashcardViewer() {
 
     if (Math.abs(swipeOffset) > 80) {
       if (swipeOffset > 0) {
-        answerCard('knew');
+        answerCardRef.current?.('knew');
       } else {
-        answerCard('forgot');
+        answerCardRef.current?.('forgot');
       }
     } else {
       setSwipeOffset(0);
